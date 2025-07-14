@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCMEL - Minecraft Multi-Edition Launcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <h1>Minecraft: Multi-Edition Launcher</h1>
+            <nav>
+                <a href="#features" class="button">Features</a>
+                <a href="#downloads" class="button primary">Download</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrapper">
+        <section class="intro">
+            <h2>One launcher for every Minecraft edition</h2>
+            <p>MCMEL lets you launch <strong>Java, Bedrock, Dungeons, Legends, and more</strong> — all from one place on
+                Linux.</p>
+            <a href="#downloads" class="button primary">Download Now</a>
+        </section>
+
+        <section id="features" class="features-list">
+            <h2>Features:</h2>
+            <div class="feature-item">
+                <img src="/screenshots/launcher.png" alt="Why MCMEL screenshot" />
+                <div class="feature-text">
+                    <h3>Why MCMEL?</h3>
+                    <p>The official Minecraft Launcher doesn’t support Bedrock, Dungeons, or Legends on Linux. MCMEL
+                        bridges that gap and adds more editions too.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-text">
+                    <h3>Configure & Launch</h3>
+                    <p>Enable or hide editions as you wish. Use your favorite launchers for each version:</p>
+                    <ul>
+                        <li><strong>Java:</strong> MultiMC, Prism Launcher</li>
+                        <li><strong>Bedrock:</strong> MCPE Launcher</li>
+                        <li><strong>Dungeons, Legends, Story Mode 1 & 2:</strong> Steam or Lutris (GOG)</li>
+                        <li><strong>Xbox 360:</strong> Xenia with Proton Experimental</li>
+                        <li><strong>Classic:</strong> Web Browser</li>
+                    </ul>
+                </div>
+                <img src="/screenshots/settings.png" alt="Configure and Launch screenshot" />
+            </div>
+        </section>
+
+        <section id="downloads" class="downloads">
+            <h2>Get MCMEL</h2>
+            <p>Download MCMEL using your favorite packaging:</p>
+            <a id="downloadBinary" class="button primary" href="#" target="_blank" rel="noopener noreferrer">Download
+                the binary</a>
+            <a href="#" class="button">Install with Flatpak (not ready)</a>
+        </section>
+
+        <section id="extras" class="downloads">
+            <h2>Extras</h2>
+            <p>Download extras for MCMEL:</p>
+            <a href="/desktop-gen" class="button primary">Generate a .desktop file</a>
+            <ul>
+                <li>Add MCMEL to your app launcher menu or desktop.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 MCMEL Project - Not affiliated with Mojang or Microsoft.</p>
+    </footer>
+
+    <script>
+        async function setDownloadLink() {
+            const downloadLink = document.getElementById('downloadBinary');
+            try {
+                const response = await fetch('https://api.github.com/repos/AndusDEV/MCMEL/releases/latest');
+                if (!response.ok) throw new Error('Failed to fetch release info');
+                const release = await response.json();
+
+                const asset = release.assets.find(a => a.name.toLowerCase() === 'mcmel.zip');
+                if (!asset) throw new Error('MCMEL.zip asset not found in latest release');
+
+                downloadLink.href = asset.browser_download_url;
+            } catch (err) {
+                downloadLink.href = '#';
+                downloadLink.onclick = (e) => {
+                    e.preventDefault();
+                    alert('Error loading download link: ' + err.message);
+                };
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', setDownloadLink);
+    </script>
+</body>
+
+</html>

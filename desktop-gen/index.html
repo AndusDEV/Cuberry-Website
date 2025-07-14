@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>.desktop File Generator — MCMEL</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <h1>MCMEL .desktop File Generator</h1>
+            <nav>
+                <a href="/" class="button">Return Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="wrapper">
+        <section class="intro">
+            <h2>Create a .desktop Launcher</h2>
+            <p>Generate a custom Linux launcher file for your MCMEL setup. Download the file, remove <code>.download</code> from the name,
+                make it executable, and place it in <code>~/.local/share/applications/</code>.</p>
+        </section>
+
+        <section id="generator">
+            <form id="desktopForm">
+                <label>
+                    <strong>Application Name:</strong><br>
+                    <input type="text" id="name" placeholder="e.g. MCMEL" required />
+                </label>
+                <br>
+
+                <label>
+                    <strong>Executable Path:</strong><br>
+                    <input type="text" id="exec" placeholder="/path/to/mcmel" required />
+                </label>
+
+                <br>
+                <button type="submit" class="button primary">Generate .desktop</button>
+            </form>
+        </section>
+
+        <section id="output-section" style="display: none; margin-top: 40px;">
+            <h3>Your .desktop File</h3>
+            <textarea id="output" rows="10" readonly style="width: 100%;"></textarea>
+            <br />
+            <button id="downloadBtn" class="button" style="margin-top: 15px;">Download .desktop File</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 MCMEL Project - Not affiliated with Mojang or Microsoft.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('desktopForm');
+        const outputSection = document.getElementById('output-section');
+        const output = document.getElementById('output');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const exec = document.getElementById('exec').value.trim();
+            const path = exec.substring(0, exec.lastIndexOf('/'));
+
+            let content = `[Desktop Entry]
+            Type=Application
+            Name=${name}
+            Exec=${exec}
+            Path=${path}
+            Icon=minecraft
+            Comment=An all-in-one Minecraft Launcher
+            Categories=Game;
+            Terminal=false
+            `;
+            output.value = content;
+            outputSection.style.display = 'block';
+
+            downloadBtn.onclick = () => {
+                const blob = new Blob([content], { type: 'text/plain' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = `${name.replace(/\s+/g, '_').toLowerCase()}.desktop`;
+                link.click();
+                URL.revokeObjectURL(link.href);
+            };
+        });
+    </script>
+</body>
+
+</html>
