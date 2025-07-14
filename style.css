@@ -88,6 +88,7 @@ footer {
   text-decoration: none;
   font-size: 14px;
   transition: background-color 0.3s ease;
+  margin: 10px 10px 0 0;
 }
 .button:hover {
   background-color: #505050;
@@ -97,6 +98,16 @@ footer {
 }
 .button.primary:hover {
   background-color: #66bb6a;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.button-group .button {
+  width: fit-content;
+  align-self: flex-start;
 }
 
 .screenshots img {
@@ -167,21 +178,6 @@ form .button.primary:hover {
   background-color: #66bb6a;
 }
 
-#downloadBtn {
-  background-color: #3a3a3a;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-family: "Segoe UI", Arial, sans-serif;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-#downloadBtn:hover {
-  background-color: #505050;
-}
-
 textarea#output {
   background-color: #2b2b2b;
   border: 1px solid #555;
@@ -191,6 +187,10 @@ textarea#output {
   font-family: monospace;
   font-size: 14px;
   resize: vertical;
+}
+
+hr {
+  width: 100%;
 }
 
 /* Responsiveness */
