@@ -1,7 +1,7 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #1e1e1e;
-  color: #e0e0e0;
+  background-color: #2b1e22;
+  color: #fbeaea;
   margin: 0;
 }
 
@@ -20,13 +20,13 @@ h3, h4 {
 }
 
 header {
-  background: #2b2b2b;
+  background: #3c2a30;
   padding: 20px 0;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #5e3e46;
 }
 header h1 {
   margin: 0;
-  color: #a4d07b;
+  color: #e03a3e;
 }
 
 nav {
@@ -42,14 +42,14 @@ main {
 }
 
 .intro {
-  background: #252525;
+  background: #3a262b;
   padding: 40px;
   border-radius: 8px;
   text-align: center;
 }
 .intro h2 {
   margin-top: 0;
-  color: #a4d07b;
+  color: #e03a3e;
 }
 .intro p {
   max-width: 600px;
@@ -66,7 +66,7 @@ ul {
 }
 
 a {
-  color: #a4d07b;
+  color: #e03a3e;
   text-decoration: none;
 }
 a:hover {
@@ -74,15 +74,15 @@ a:hover {
 }
 
 footer {
-  background: #2b2b2b;
+  background: #3c2a30;
   text-align: center;
   padding: 20px 0;
-  border-top: 1px solid #444;
+  border-top: 1px solid #5e3e46;
 }
 
 .button {
-  background-color: #3a3a3a;
-  color: #fff;
+  background-color: #4d2f34;
+  color: #fbeaea;
   padding: 10px 20px;
   border-radius: 4px;
   text-decoration: none;
@@ -91,13 +91,13 @@ footer {
   margin: 10px 10px 0 0;
 }
 .button:hover {
-  background-color: #505050;
+  background-color: #6a3e43;
 }
 .button.primary {
-  background-color: #4caf50;
+  background-color: #e03a3e;
 }
 .button.primary:hover {
-  background-color: #66bb6a;
+  background-color: #ec4b4f;
 }
 
 .button-group {
@@ -125,7 +125,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 20px;
-  background: #252525;
+  background: #3a262b;
   padding: 20px;
   border-radius: 8px;
 }
@@ -141,14 +141,14 @@ footer {
 label {
   display: block;
   margin-bottom: 15px;
-  color: #ccc;
+  color: #fbeaea;
 }
 
 input[type="text"] {
-  background-color: #2b2b2b;
-  border: 1px solid #555;
+  background-color: #4a2f36;
+  border: 1px solid #774d56;
   padding: 8px 12px;
-  color: #e0e0e0;
+  color: #fbeaea;
   border-radius: 3px;
   font-family: "Segoe UI", Arial, sans-serif;
   font-size: 14px;
@@ -158,12 +158,12 @@ input[type="text"] {
 
 input[type="text"]:focus {
   outline: none;
-  border-color: #4caf50;
-  box-shadow: 0 0 4px #4caf50;
+  border-color: #e03a3e;
+  box-shadow: 0 0 4px #e03a3e;
 }
 
 form .button.primary {
-  background-color: #4caf50;
+  background-color: #e03a3e;
   color: white;
   border: none;
   border-radius: 4px;
@@ -175,14 +175,14 @@ form .button.primary {
 }
 
 form .button.primary:hover {
-  background-color: #66bb6a;
+  background-color: #ec4b4f;
 }
 
 textarea#output {
-  background-color: #2b2b2b;
-  border: 1px solid #555;
+  background-color: #4a2f36;
+  border: 1px solid #774d56;
   padding: 12px;
-  color: #e0e0e0;
+  color: #fbeaea;
   border-radius: 4px;
   font-family: monospace;
   font-size: 14px;
@@ -191,6 +191,7 @@ textarea#output {
 
 hr {
   width: 100%;
+  border-color: #5e3e46;
 }
 
 /* Responsiveness */

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MCMEL - Minecraft Multi-Edition Launcher</title>
+    <title>Cuberry Launcher</title>
+    <link rel="icon" type="image/x-icon" href="/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,7 +13,8 @@
 <body>
     <header>
         <div class="wrapper">
-            <h1>Minecraft: Multi-Edition Launcher</h1>
+            <img src="/logo.png" width="64">
+            <h1>Cuberry Launcher</h1>
             <nav>
                 <a href="#features" class="button">Features</a>
                 <a href="#downloads" class="button primary">Download</a>
@@ -22,9 +24,8 @@
 
     <main class="wrapper">
         <section class="intro">
-            <h2>One launcher for every Minecraft edition</h2>
-            <p>MCMEL lets you launch <strong>Java, Bedrock, Dungeons, Legends, and more</strong> — all from one place on
-                Linux.</p>
+            <h2>One launcher for multiple games</h2>
+            <p>A handy Linux launcher that lets you run multiple sandbox voxel games all in one place.</p>
             <a href="#downloads" class="button primary">Download Now</a>
         </section>
 
@@ -44,13 +45,18 @@
             <div class="feature-item">
                 <div class="feature-text">
                     <h3>Configure & Launch</h3>
-                    <p>Enable or hide editions as you wish. Use your favorite launchers for each version:</p>
+                    <p>Enable or hide games as you wish. Use your favorite launchers for each game:</p>
                     <ul>
-                        <li><strong>Java:</strong> MultiMC, Prism Launcher</li>
-                        <li><strong>Bedrock:</strong> MCPE Launcher</li>
-                        <li><strong>Dungeons, Legends, Story Mode 1 & 2:</strong> Steam or Lutris (GOG)</li>
-                        <li><strong>Xbox 360:</strong> Xenia with Proton Experimental</li>
-                        <li><strong>Classic:</strong> Web Browser</li>
+                        <li><strong>MC Java:</strong> MultiMC, Prism Launcher, (and more based on MultiMC)</li>
+                        <li><strong>MC Bedrock:</strong> MCPE Launcher</li>
+                        <li><strong>MC Dungeons, Legends:</strong> Steam</li>
+                        <li><strong>MC Story Mode 1 & 2:</strong> Steam or Lutris (GOG)</li>
+                        <li><strong>MC Xbox 360:</strong> Xenia with Proton Experimental</li>
+                        <li><strong>MC Classic:</strong> Web Browser</li>
+                        <li><strong>Vintage Story:</strong> Binary or Flatpak</li>
+                        <li><strong>Terraria:</strong> Steam</li>
+                        <li><strong>Luanti (formerly Minetest):</strong> Binary or Flatpak</li>
+                        <li><strong>Classicube:</strong> Binary</li>
                     </ul>
                 </div>
                 <img src="/screenshots/settings.png" alt="Configure and Launch" />
@@ -60,7 +66,7 @@
                 <img src="/screenshots/update.png" alt="Update Checker" />
                 <div class="feature-text">
                     <h3>Update Checker</h3>
-                    <p>MCMEL checks for new updates every time you launch it - so you’re always running the latest version with the newest features and fixes.</p>
+                    <p>Cuberry checks for new updates every time you launch it - so you’re always running the latest version with the newest features and fixes.</p>
                 </div>
             </div>
         </section>
@@ -68,39 +74,39 @@
         <hr>
 
         <section id="downloads" class="downloads">
-            <h2>Get MCMEL:</h2>
+            <h2>Get Cuberry:</h2>
             <div class="button-group">
                 <a id="downloadBinary" class="button primary" href="#" target="_blank" rel="noopener noreferrer">Download the binary</a>
                 <a href="#" class="button">Install with Flatpak (not ready)</a>
-                <a id="downloadOlder" class="button" href="https://github.com/andusdev/mcmel/releases">Older Releases</a>
+                <a id="downloadOlder" class="button" href="https://github.com/AndusDEV/Cuberry/releases">Older Releases</a>
             </div>
         </section>
 
         <section id="extras" class="downloads">
             <h3>Extras:</h3>
-            <p>Download extras for MCMEL:</p>
+            <p>Download extras for Cuberry:</p>
             <a href="/desktop-gen" class="button primary">Generate a .desktop file</a>
             <ul>
-                <li>Add MCMEL to your app launcher menu or desktop.</li>
+                <li>Add Cuberry to your app launcher menu or desktop.</li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p><a href="https://github.com/andusdev/mcmel">Source Code</a> | <a href="https://discord.gg/xjYFtN3pCw">Discord Server</a></p>
-        <p>© 2025 MCMEL Project - Not affiliated with Mojang or Microsoft.</p>
+        <p><a href="https://github.com/AndusDEV/Cuberry">Source Code</a> | <a href="https://discord.gg/xjYFtN3pCw">Discord Server</a></p>
+        <p>© 2025 Cuberry Project - Not affiliated with any of the games present in the launcher.</p>
     </footer>
 
     <script>
         async function setDownloadLink() {
             const downloadLink = document.getElementById('downloadBinary');
             try {
-                const response = await fetch('https://api.github.com/repos/AndusDEV/MCMEL/releases/latest');
+                const response = await fetch('https://api.github.com/repos/AndusDEV/Cuberry/releases/latest');
                 if (!response.ok) throw new Error('Failed to fetch release info');
                 const release = await response.json();
 
-                const asset = release.assets.find(a => a.name.toLowerCase() === 'mcmel.zip');
-                if (!asset) throw new Error('MCMEL.zip asset not found in latest release');
+                const asset = release.assets.find(a => a.name.toLowerCase() === 'cuberry.zip');
+                if (!asset) throw new Error('Cuberry.zip asset not found in latest release');
 
                 downloadLink.href = asset.browser_download_url;
             } catch (err) {

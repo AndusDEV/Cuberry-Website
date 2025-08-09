@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>.desktop File Generator — MCMEL</title>
+    <title>Cuberry - .desktop File Generator</title>
     <link rel="stylesheet" href="/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
 </head>
@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="wrapper">
-            <h1>MCMEL .desktop File Generator</h1>
+            <h1>Cuberry - .desktop File Generator</h1>
             <nav>
                 <a href="/" class="button">Return Home</a>
             </nav>
@@ -22,21 +22,21 @@
     <main class="wrapper">
         <section class="intro">
             <h2>Create a .desktop Launcher</h2>
-            <p>Generate a custom Linux launcher file for your MCMEL setup. Download the file, remove <code>.download</code> from the name,
-                make it executable, and place it in <code>~/.local/share/applications/</code>.</p>
+            <p>Generate a custom Linux launcher file for your Cuberry setup. Download the file, remove <code>.download</code> from the name,
+                make it executable, and place it in <code>~/.local/share/applications/</code> or on your desktop!</p>
         </section>
 
         <section id="generator">
             <form id="desktopForm">
                 <label>
                     <strong>Application Name:</strong><br>
-                    <input type="text" id="name" placeholder="e.g. MCMEL" required />
+                    <input type="text" id="name" placeholder="e.g. Cuberry" required />
                 </label>
                 <br>
 
                 <label>
                     <strong>Executable Path:</strong><br>
-                    <input type="text" id="exec" placeholder="/path/to/mcmel" required />
+                    <input type="text" id="exec" placeholder="/path/to/cuberry" required />
                 </label>
 
                 <br>
@@ -53,8 +53,8 @@
     </main>
 
     <footer>
-        <p><a href="https://github.com/andusdev/mcmel">Source Code</a> | <a href="https://discord.gg/xjYFtN3pCw">Discord Server</a></p>
-        <p>© 2025 MCMEL Project - Not affiliated with Mojang or Microsoft.</p>
+        <p><a href="https://github.com/AndusDEV/Cuberry">Source Code</a> | <a href="https://discord.gg/xjYFtN3pCw">Discord Server</a></p>
+        <p>© 2025 Cuberry Project - Not affiliated with any of the games present in the launcher.</p>
     </footer>
 
     <script>
@@ -75,8 +75,7 @@
             Name=${name}
             Exec=${exec}
             Path=${path}
-            Icon=minecraft
-            Comment=An all-in-one Minecraft Launcher
+            Comment=A handy Linux launcher for sandbox voxel games!
             Categories=Game;
             Terminal=false
             `;
